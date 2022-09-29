@@ -1,7 +1,7 @@
 class FoodsController < ApplicationController
   before_action :authenticate_user!
   load_and_authorize_resourse
-  
+
   def create
     if @food.save
       flash[:notice] = 'Food saved successfully'
