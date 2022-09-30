@@ -74,6 +74,10 @@ GEM
     bootsnap (1.13.0)
       msgpack (~> 1.2)
     builder (3.2.4)
+    bullet (7.0.3)
+      activesupport (>= 3.0.0)
+      uniform_notifier (~> 1.11)
+    cancancan (3.4.0)
     capybara (3.37.1)
       addressable
       matrix
@@ -123,6 +127,10 @@ GEM
       activesupport (>= 5.0.0)
     json (2.6.2)
     jwt (2.5.0)
+    launchy (2.5.0)
+      addressable (~> 2.7)
+    letter_opener (1.8.1)
+      launchy (>= 2.2, < 3)
     loofah (2.19.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -231,6 +239,7 @@ GEM
     tzinfo-data (1.2022.4)
       tzinfo (>= 1.0.0)
     unicode-display_width (2.3.0)
+    uniform_notifier (1.16.0)
     warden (1.2.9)
       rack (>= 2.0.9)
     warden-jwt_auth (0.7.0)
@@ -260,12 +269,15 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap
+  bullet
+  cancancan (>= 3.0, < 4.0)
   capybara
   debug
   devise (>= 4.0, < 5.0)
   devise-jwt
   importmap-rails
   jbuilder
+  letter_opener
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.4)

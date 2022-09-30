@@ -51,11 +51,14 @@ gem 'bootsnap', require: false
 # gem "image_processing", "~> 1.2"
 
 group :development, :test do
+  gem 'bullet'
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri mingw x64_mingw]
 end
 
 group :development do
+  gem 'letter_opener'
+
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem 'web-console'
 
@@ -78,3 +81,6 @@ gem 'devise', '>= 4.0', '< 5.0'
 
 # JWT authentication for devise
 gem 'devise-jwt'
+
+# Authorization
+gem 'cancancan', '>= 3.0', '< 4.0'
