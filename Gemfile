@@ -3,10 +3,25 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.1.2'
 
-gem 'rubocop', '>= 1.0', '< 2.0'
-
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem 'rails', '~> 7.0.4'
+gem 'rails', '~> 7.0.3', '>= 7.0.3.1'
+
+gem 'ffi'
+
+# Load environment variables
+gem 'dotenv-rails', require: 'dotenv/rails-now'
+
+# Make Rack-based apps CORS compatible
+gem 'rack-cors'
+
+# Authentication
+gem 'devise', '>= 4.0', '< 5.0'
+
+# JWT authentication for devise
+gem 'devise-jwt'
+
+# Authorization
+gem 'cancancan', '>= 3.0', '< 4.0'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
@@ -50,15 +65,24 @@ gem 'bootsnap', require: false
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
+gem 'rswag-api'
+gem 'rswag-ui'
+
 group :development, :test do
+  gem 'rswag-specs'
+
+  # Help to kill N+1 queries and unused eager loading
   gem 'bullet'
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri mingw x64_mingw]
 end
 
 group :development do
+  #  Preview email
   gem 'letter_opener'
 
+  #  Linter Ruby files
+  gem 'rubocop', '>= 1.0', '< 2.0'
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem 'web-console'
 
@@ -70,17 +94,12 @@ group :development do
 end
 
 group :test do
-  # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
+  # Testing framework
+  gem 'rails-controller-testing'
+  gem 'rspec-rails'
+  gem 'simplecov', require: false
+
+  # Integration testing tools
   gem 'capybara'
-  gem 'selenium-webdriver'
   gem 'webdrivers'
 end
-
-# Authentication
-gem 'devise', '>= 4.0', '< 5.0'
-
-# JWT authentication for devise
-gem 'devise-jwt'
-
-# Authorization
-gem 'cancancan', '>= 3.0', '< 4.0'

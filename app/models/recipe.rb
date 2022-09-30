@@ -5,5 +5,5 @@ class Recipe < ApplicationRecord
   validates :name, presence: true
   validates :preparation_time, presence: true
   validates :cooking_time, presence: true
-  validates :description, presence: true, length: { maximun: 200 }
+  validates :description, presence: true, length: { maximum: 200 }
 end
