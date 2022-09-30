@@ -81,3 +81,6 @@ gem 'devise', '>= 4.0', '< 5.0'
 
 # JWT authentication for devise
 gem 'devise-jwt'
+
+# Authorization
+gem 'cancancan', '>= 3.0', '< 4.0'
