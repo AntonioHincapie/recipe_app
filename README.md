@@ -20,11 +20,9 @@ The Recipe app keeps track of all your recipes, ingredients, and inventory. It w
 
 - bundle install
 
+- rails db:create db:seed
+
 - rails server
-
-## Testing
-
-- rspec
 
 ## Author
 
