@@ -15,15 +15,19 @@
     <table>
       <%= render 'thead_element' %>
       <tbody>
-        <% @items.each do |item| %>
-          <tr>
-            <td><%= item.name %></td>
-            <td>
-              <%= item.quantity %>
-              <%= item.measurement_unit %>
-            </td>
-            <td>$<%= item.price %></td>
-          </tr>
+        <% if @items.empty? %>
+          <td colspan="4">The food list is empty</td>
+        <% else %>
+          <% @items.each do |item| %>
+            <tr>
+              <td><%= item.name %></td>
+              <td>
+                <%= item.quantity %>
+                <%= item.measurement_unit %>
+              </td>
+              <td>$<%= item.price %></td>
+            </tr>
+          <% end %>
         <% end %>
       </tbody>
     </table>
