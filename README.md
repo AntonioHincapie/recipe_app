@@ -22,10 +22,6 @@ The Recipe app keeps track of all your recipes, ingredients, and inventory. It w
 
 - rails server
 
-## Testing
-
-- rspec
-
 ## Author
 
 ## 👤 **Marco Antonio Hincapié Montes**

@@ -69,6 +69,9 @@ gem 'rswag-api'
 gem 'rswag-ui'
 
 group :development, :test do
+  gem 'database_cleaner'
+  gem 'rspec-rails'
+
   gem 'rswag-specs'
 
   # Help to kill N+1 queries and unused eager loading
@@ -96,10 +99,10 @@ end
 group :test do
   # Testing framework
   gem 'rails-controller-testing'
-  gem 'rspec-rails'
   gem 'simplecov', require: false
 
   # Integration testing tools
   gem 'capybara'
+  gem 'selenium-webdriver'
   gem 'webdrivers'
 end
